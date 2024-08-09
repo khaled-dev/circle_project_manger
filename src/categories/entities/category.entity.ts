@@ -9,7 +9,7 @@ export class Category {
   name: string;
 
   @Column()
-  is_profitable: boolean;
+  is_profitable: boolean = true;
 
   @CreateDateColumn()
   created_at: Date;
