@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: circle_db_container
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: circle
+      POSTGRES_PASSWORD: circle
+      POSTGRES_DB: circle
+    volumes:
+      - circle_db_volume:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  circle_db_volume:
